@@ -6,7 +6,7 @@
 
 - name: Execute SQL script on RDS
   mysql_db:
-    login_host: terraform-20230524064706387100000004.c58l01rn1yea.us-east-2.rds.amazonaws.com
+    login_host: "{{endpointofrds}}"
     login_user: "{{user}}"
     login_password: "{{password}}"
     name: mydb
