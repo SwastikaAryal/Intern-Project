@@ -1,0 +1,50 @@
+# - name: Install Apache
+#   apt:
+#     name:
+#       - apache2
+#       # - unzip
+#     update_cache: yes
+#     state: latest
+
+
+# - name: copy index.php file
+#   copy:
+#     # src: "files/{{ file_name }}.zip"
+#     src: index/index.php
+#     dest: /var/www/html/
+
+# # - name: Modify Apache configuration file
+# #   become: true
+# #   lineinfile:
+# #     path: '/etc/apache2/sites-available/000-default.conf'
+# #     regexp: '^Documentroot.*$'
+# #     line: 'Documentroot /var/www/html/index.php'
+  
+# # - name: restart Apache
+# #   become: true
+# #   service:
+# #     name: apache2
+# #     enabled: yes
+# #     state: restarted
+
+
+- name: Install Apache
+  apt:
+    name:
+      - apache2
+    update_cache: yes
+    state: latest
+
+
+- name: copy index.php file
+  copy:
+    # src: "files/{{ file_name }}.zip"
+    src: index/index.php
+    dest: /var/www/html/
+    
+- name: restart Apache
+  service:
+    name: apache2
+    enabled: yes
+    state: restarted
+
