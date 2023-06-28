@@ -21,9 +21,9 @@
     // Get the IP address of the client
 
     // Display the IP address
-    $servername = "terraform-20230524064706387100000004.c58l01rn1yea.us-east-2.rds.amazonaws.com";
-    $username = "terraform";
-    $password = "mysql123";
+    $servername = "endpoint of rds";
+    $username = "username";
+    $password = "password";
     $dbname = "mydb";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     if (!$conn) {
